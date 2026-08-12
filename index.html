@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harikrishnan A V — Portfolio</title>
+<meta name="description" content="Projects in quantitative finance, data pipelines, and automation.">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-alt: #f4f5f7;
+    --text: #1b1f24;
+    --text-muted: #55606b;
+    --border: #dfe3e8;
+    --accent: #1f4e79;
+    --accent-soft: #eaf1f7;
+    --card-shadow: 0 1px 3px rgba(20, 30, 40, 0.08);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14181d;
+      --bg-alt: #1b2028;
+      --text: #e8ebee;
+      --text-muted: #a3aeb8;
+      --border: #2c333c;
+      --accent: #7fb3e0;
+      --accent-soft: #202b36;
+      --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; padding: 56px 24px 80px; }
+  header { margin-bottom: 44px; }
+  h1 { font-size: 1.9rem; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .tagline { color: var(--text-muted); font-size: 1.05rem; margin: 0 0 18px; }
+  .bio { color: var(--text); font-size: 0.98rem; max-width: 620px; }
+  section { margin-bottom: 40px; }
+  h2 {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin: 0 0 16px;
+    font-weight: 600;
+  }
+  .card {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+    box-shadow: var(--card-shadow);
+  }
+  .card h3 { margin: 0 0 8px; font-size: 1.12rem; }
+  .card h3 a { color: var(--text); text-decoration: none; }
+  .card h3 a:hover { color: var(--accent); }
+  .card p { margin: 0 0 12px; color: var(--text-muted); font-size: 0.94rem; }
+  .status {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 2px 9px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .stack { font-size: 0.82rem; color: var(--text-muted); margin: 10px 0 0; }
+  .stack span {
+    display: inline-block;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 2px 8px;
+    margin: 2px 6px 2px 0;
+  }
+  .repo-link {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .repo-link:hover { text-decoration: underline; }
+  .contact-list { list-style: none; padding: 0; margin: 0; }
+  .contact-list li {
+    padding: 9px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.94rem;
+    display: flex;
+    gap: 10px;
+  }
+  .contact-list li:last-child { border-bottom: none; }
+  .contact-list .label { color: var(--text-muted); min-width: 80px; }
+  .contact-list a { color: var(--text); text-decoration: none; }
+  .contact-list a:hover { color: var(--accent); }
+  footer { color: var(--text-muted); font-size: 0.8rem; margin-top: 48px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Harikrishnan A V</h1>
+    <p class="tagline">Quantitative finance &amp; data automation</p>
+    <p class="bio">MBA (Finance), SASTRA University, 2026. I build data pipelines and
+      decision-support systems in finance — signal validation for equity trading,
+      automated earnings/KPI extraction from financial filings, and job-market
+      data tooling. Projects below are real, working systems, not exercises.</p>
+  </header>
+
+  <section>
+    <h2>Projects</h2>
+
+    <div class="card">
+      <span class="status">Public repo</span>
+      <h3><a href="https://github.com/Harikrish0406/ril-kpi-builder" target="_blank" rel="noopener">RIL KPI Builder</a></h3>
+      <p>Automated earnings parser and KPI builder for Reliance Industries — built for
+        an ITUS Capital assignment. Fetches 15 years of quarterly filings directly from
+        BSE's public API, extracts financials from native-text and scanned/OCR PDFs,
+        applies the required comparability adjustments (excise deduction, GST
+        discontinuity, segment merger, capex handling), and outputs a full KPI sheet
+        with an adjustment log and data-quality notes. Includes a drift-watchdog layer
+        that flags new or disappearing disclosure fields across quarters. 83% exact
+        match against a hand-built reference sheet on directly comparable metrics,
+        with remaining gaps traced to OCR reading-order issues on old scanned filings
+        and documented honestly rather than hidden.</p>
+      <p class="stack">
+        <span>Python</span><span>PyMuPDF</span><span>Tesseract OCR</span><span>pandas</span><span>BSE API</span>
+      </p>
+      <a class="repo-link" href="https://github.com/Harikrish0406/ril-kpi-builder" target="_blank" rel="noopener">View repository →</a>
+    </div>
+
+    <div class="card">
+      <span class="status">Public repo</span>
+      <h3><a href="https://github.com/Harikrish0406/nse-quant-signal-stack" target="_blank" rel="noopener">NSE Quant Signal Stack</a></h3>
+      <p>A layered signal-validation and portfolio-construction pipeline for NSE
+        equities, rebuilt after a code audit found a lookahead bug in the
+        highest-weighted signal of an earlier version and hardcoded (not measured)
+        weights elsewhere. Every signal here earns its weight in the final decision
+        from its own leak-free, walk-forward-validated performance — a signal that
+        fails validation is excluded entirely, not just down-weighted. Includes a
+        purpose-built leak-free validation framework, an XGBoost/LightGBM ensemble,
+        and a backtest of the combiner itself, not just its ingredient signals.
+        Shared here as an architecture/methodology showcase — live validation
+        results and trading data are intentionally excluded.</p>
+      <p class="stack">
+        <span>Python</span><span>XGBoost</span><span>LightGBM</span><span>pandas</span><span>Walk-forward validation</span>
+      </p>
+      <a class="repo-link" href="https://github.com/Harikrish0406/nse-quant-signal-stack" target="_blank" rel="noopener">View repository →</a>
+    </div>
+
+    <div class="card">
+      <span class="status">Public repo</span>
+      <h3><a href="https://github.com/Harikrish0406/mnc-job-scraper" target="_blank" rel="noopener">MNC Job Scraper</a></h3>
+      <p>Pulls live job openings directly from company career-site APIs (Greenhouse,
+        Lever, and Workday's public CXS endpoint) rather than relying on manual search
+        or guessed URLs — every company/platform pairing in the registry is verified
+        by a direct API hit before being trusted. Filters for entry-level/graduate
+        roles in Chennai or India-remote, with a location-bucketing pass that catches
+        postings vaguely labeled "Remote" but actually geo-restricted outside India.
+        Includes a discovery helper that finds a company's real Workday tenant/site
+        from its public careers page rather than blind-guessing tenant strings.</p>
+      <p class="stack">
+        <span>Python</span><span>Requests</span><span>openpyxl</span><span>Greenhouse/Lever/Workday APIs</span>
+      </p>
+      <a class="repo-link" href="https://github.com/Harikrish0406/mnc-job-scraper" target="_blank" rel="noopener">View repository →</a>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <ul class="contact-list">
+      <li><span class="label">Email</span><a href="mailto:qkrishnan486@gmail.com">qkrishnan486@gmail.com</a></li>
+      <li><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/harikrishnan-a-v-22bb6a233/" target="_blank" rel="noopener">linkedin.com/in/harikrishnan-a-v-22bb6a233</a></li>
+      <li><span class="label">Phone</span><a href="tel:+918072093316">+91 80720 93316</a></li>
+    </ul>
+  </section>
+
+  <footer>Last updated August 2026.</footer>
+
+</div>
+</body>
+</html>
