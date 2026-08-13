@@ -98,6 +98,14 @@
     color: var(--text-muted); margin-bottom: 32px; letter-spacing: 0.06em; text-transform: uppercase;
   }
   .hero-eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px var(--accent); }
+  .hero-photo {
+    width: 148px; height: 148px; border-radius: 50%; object-fit: cover;
+    margin-bottom: 28px;
+    border: 3px solid transparent;
+    background: linear-gradient(var(--bg-1), var(--bg-1)) padding-box,
+                linear-gradient(120deg, var(--accent), var(--accent-2) 55%, var(--accent-3)) border-box;
+    box-shadow: 0 12px 34px rgba(0,0,0,0.4);
+  }
   .hero h1 {
     font-family: 'Fraunces', serif; font-weight: 600; font-style: italic;
     font-size: clamp(2.8rem, 7vw, 4.8rem);
@@ -246,6 +254,7 @@
 <div class="wrap">
 
   <div class="hero">
+    <img src="profile.jpg" alt="Harikrishnan A V" class="hero-photo">
     <div class="hero-eyebrow"><span class="dot"></span> Open to opportunities</div>
     <h1>Harikrishnan <span class="grad">A V</span></h1>
     <p class="tagline">MBA Finance &amp; Marketing · Finance × AI × Strategy. Building automated systems, financial analysis, and data-driven decisions.</p>
